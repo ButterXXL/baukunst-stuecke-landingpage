@@ -1,0 +1,291 @@
+:root {
+  /* Baukunst Artistic Theme - New Sophisticated Palette */
+  
+  /* Main Colors */
+  --thistle: #d4cbe5;
+  --french-gray: #cfc7d2;
+  --rose-quartz: #bea8aa;
+  --cool-gray: #8b8a8f;
+  --reseda-green: #7c7f65;
+  
+  /* HSL Variants for better control */
+  --thistle-hsl: 261, 33%, 85%;
+  --french-gray-hsl: 284, 11%, 80%;
+  --rose-quartz-hsl: 355, 14%, 70%;
+  --cool-gray-hsl: 255, 4%, 56%;
+  --reseda-green-hsl: 67, 11%, 45%;
+  
+  /* Theme Mapping */
+  --background: hsl(0, 0%, 25%);  /* Dark gray background */
+  --foreground: hsl(0, 0%, 95%);  /* Light gray for text */
+  --card: hsla(0, 0%, 20%, 0.9);   /* Dark gray cards */
+  --card-foreground: hsl(0, 0%, 95%);       /* Light text on cards */
+  --popover: hsl(0, 0%, 20%);
+  --popover-foreground: hsl(0, 0%, 95%);
+  
+  /* Primary - Rose Quartz for CTAs */
+  --primary: hsl(var(--rose-quartz-hsl));
+  --primary-foreground: hsl(261, 33%, 15%);
+  --primary-hover: hsl(355, 14%, 60%);
+  
+  /* Secondary - Light gray for accents */
+  --secondary: hsl(0, 0%, 70%);
+  --secondary-foreground: hsl(0, 0%, 10%);
+  --secondary-hover: hsl(0, 0%, 80%);
+  
+  /* Muted - Medium Gray */
+  --muted: hsl(0, 0%, 50%);
+  --muted-foreground: hsl(0, 0%, 90%);
+  
+  /* Accent - Light gray */
+  --accent: hsla(0, 0%, 60%, 0.8);
+  --accent-foreground: hsl(0, 0%, 95%);
+  
+  --destructive: hsl(0, 70%, 60%);
+  --destructive-foreground: hsl(0, 0%, 100%);
+  
+  /* Borders and inputs */
+  --border: hsla(var(--cool-gray-hsl), 0.3);
+  --input: hsla(var(--french-gray-hsl), 0.5);
+  --ring: hsl(var(--rose-quartz-hsl));
+  
+  /* Chart colors using the palette */
+  --chart-1: hsl(var(--rose-quartz-hsl));
+  --chart-2: hsl(var(--thistle-hsl));
+  --chart-3: hsl(var(--cool-gray-hsl));
+  --chart-4: hsl(var(--french-gray-hsl));
+  --chart-5: hsl(var(--reseda-green-hsl));
+  
+  /* Typography - Helvetica Neue Light */
+  --font-sans: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --font-serif: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --font-mono: 'Monaco', 'Menlo', 'Consolas', monospace;
+  --font-weight-default: 300; /* Light weight as default */
+  
+  /* Spacing & Layout - More organic feeling */
+  --radius: 0.75rem;  /* Softer, more rounded */
+  
+  /* Shadows - Softer, more artistic */
+  --shadow-2xs: 0px 2px 6px 0px hsla(var(--reseda-green-hsl), 0.15);
+  --shadow-xs: 0px 2px 6px 0px hsla(var(--reseda-green-hsl), 0.15);
+  --shadow-sm: 0px 4px 12px 0px hsla(var(--reseda-green-hsl), 0.20), 0px 1px 3px -1px hsla(var(--reseda-green-hsl), 0.20);
+  --shadow: 0px 4px 12px 0px hsla(var(--reseda-green-hsl), 0.20), 0px 1px 3px -1px hsla(var(--reseda-green-hsl), 0.20);
+  --shadow-md: 0px 8px 20px 0px hsla(var(--reseda-green-hsl), 0.25), 0px 2px 6px -1px hsla(var(--reseda-green-hsl), 0.25);
+  --shadow-lg: 0px 16px 32px 0px hsla(var(--reseda-green-hsl), 0.30), 0px 4px 12px -1px hsla(var(--reseda-green-hsl), 0.30);
+  --shadow-xl: 0px 24px 48px 0px hsla(var(--reseda-green-hsl), 0.35), 0px 8px 20px -1px hsla(var(--reseda-green-hsl), 0.35);
+  --shadow-2xl: 0px 32px 64px 0px hsla(var(--reseda-green-hsl), 0.40);
+  
+  --tracking-normal: 0.015em;
+  --spacing: 0.25rem;
+  
+  /* Radius variants */
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+/* Gradient Definitions */
+.gradient-primary {
+  background: linear-gradient(135deg, 
+    hsl(var(--rose-quartz-hsl)) 0%, 
+    hsl(var(--thistle-hsl)) 100%);
+}
+
+.gradient-secondary {
+  background: linear-gradient(135deg, 
+    hsl(var(--thistle-hsl)) 0%, 
+    hsl(var(--french-gray-hsl)) 100%);
+}
+
+.gradient-background {
+  background: linear-gradient(180deg,
+    hsl(var(--rose-quartz-hsl)) 0%,
+    hsla(var(--rose-quartz-hsl), 0.5) 100%);
+}
+
+.gradient-radial {
+  background: radial-gradient(circle,
+    hsl(var(--thistle-hsl)) 0%,
+    hsl(var(--french-gray-hsl)) 30%,
+    hsl(var(--rose-quartz-hsl)) 60%,
+    hsl(var(--cool-gray-hsl)) 85%,
+    hsl(280, 8%, 45%) 100%);
+}
+
+/* Custom utility classes for Baukunst artistic theme */
+.text-gradient-artistic {
+  background: linear-gradient(135deg, 
+    hsl(var(--rose-quartz-hsl)) 0%, 
+    hsl(var(--thistle-hsl)) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.bg-artistic-texture {
+  background-image: 
+    radial-gradient(circle at 25% 25%, hsla(0, 0%, 40%, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 75% 75%, hsla(0, 0%, 50%, 0.1) 0%, transparent 50%),
+    linear-gradient(
+      180deg,
+      hsl(0, 0%, 25%) 0%,
+      hsla(0, 0%, 30%, 0.9) 100%
+    );
+}
+
+.border-artistic {
+  border: 2px solid hsla(var(--rose-quartz-hsl), 0.4);
+  position: relative;
+}
+
+.border-artistic::before {
+  content: '';
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  right: -4px;
+  bottom: -4px;
+  border: 1px solid hsla(var(--thistle-hsl), 0.3);
+  border-radius: calc(var(--radius) + 4px);
+  pointer-events: none;
+}
+
+/* Artistic button styles */
+.btn-artistic-primary {
+  background: black !important;
+  color: white !important;
+  font-weight: 300 !important;
+  letter-spacing: 0.025em;
+  padding: 1rem 1.5rem;
+  border-radius: 0.5rem;
+  border: 1px solid black;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  box-shadow: none;
+}
+
+.btn-artistic-primary:hover {
+  background: rgba(0, 0, 0, 0.8) !important;
+  transform: translateY(-2px);
+}
+
+.btn-artistic-secondary {
+  background: transparent !important;
+  color: black !important;
+  border: 1px solid black;
+  font-weight: 300 !important;
+  letter-spacing: 0.025em;
+  padding: 1rem 1.5rem;
+  border-radius: 0.5rem;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.btn-artistic-secondary:hover {
+  background: black !important;
+  color: white !important;
+  transform: translateY(-2px);
+}
+
+/* Glass morphism for overlays - updated for new palette */
+.glass-overlay-artistic {
+  background: hsla(var(--french-gray-hsl), 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid hsla(var(--thistle-hsl), 0.2);
+}
+
+/* Typography enhancements - light approach */
+.headline-artistic {
+  font-weight: 400 !important;
+  letter-spacing: -0.015em;
+  line-height: 1.2;
+  color: white !important;
+}
+
+/* Card styles with new palette */
+.card-artistic {
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 0.75rem;
+  padding: 2rem;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-artistic:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  border-color: rgba(0, 0, 0, 0.2);
+  background: rgba(255, 255, 255, 0.95);
+}
+
+/* Video overlay with new palette */
+.video-overlay-artistic {
+  background: linear-gradient(to bottom, 
+    hsla(var(--reseda-green-hsl), 0.2) 0%, 
+    hsla(var(--reseda-green-hsl), 0.5) 50%, 
+    hsla(var(--reseda-green-hsl), 0.8) 100%);
+}
+
+/* Navigation styles */
+.nav-artistic {
+  background: hsla(0, 0%, 25%, 0.9);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid hsla(0, 0%, 30%, 0.2);
+}
+
+/* Input styles */
+.input-artistic {
+  background: hsla(0, 0%, 30%, 0.6);
+  border: 2px solid hsla(0, 0%, 40%, 0.3);
+  border-radius: var(--radius-md);
+  color: white;
+  padding: 0.75rem 1rem;
+  transition: all 0.3s ease;
+}
+
+.input-artistic:focus {
+  border-color: hsl(var(--rose-quartz-hsl));
+  box-shadow: 0 0 0 3px hsla(var(--rose-quartz-hsl), 0.2);
+  background: hsla(0, 0%, 35%, 0.9);
+}
+
+/* Section backgrounds */
+.section-primary {
+  background: linear-gradient(180deg,
+    hsl(280, 8%, 45%) 0%,
+    hsla(var(--cool-gray-hsl), 0.9) 100%);
+}
+
+.section-secondary {
+  background: linear-gradient(180deg,
+    hsla(var(--french-gray-hsl), 0.8) 0%,
+    hsla(var(--thistle-hsl), 0.6) 100%);
+}
+
+/* Timeline styles */
+.timeline-dot-artistic {
+  background: linear-gradient(135deg, 
+    hsl(var(--rose-quartz-hsl)) 0%, 
+    hsl(var(--thistle-hsl)) 100%);
+  border: 3px solid hsla(var(--french-gray-hsl), 0.9);
+  box-shadow: var(--shadow-md);
+}
+
+/* FAQ styles */
+.faq-artistic {
+  background: hsla(var(--french-gray-hsl), 0.7);
+  border: 1px solid hsla(var(--thistle-hsl), 0.3);
+  border-radius: var(--radius-lg);
+}
+
+.faq-artistic:hover {
+  border-color: hsla(var(--rose-quartz-hsl), 0.5);
+  background: hsla(var(--french-gray-hsl), 0.85);
+}

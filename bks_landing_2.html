@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Baukunst Stücke – Spektakuläre Inszenierungen für Richtfeste & Baustellen-Events</title>
+    <meta name="description" content="Wir verwandeln Baustellen in Bühnen: künstlerische Performances für Richtfeste, Stakeholder-Events & besondere Übergaben – emotional, bildstark, pressefähig.">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Flowbite -->
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@2.0.0/dist/flowbite.min.js"></script>
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Helvetica+Neue:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Custom Artistic Theme -->
+    <link rel="stylesheet" href="theme_bks_2.css">
+    
+    <style>
+        /* Additional custom styles for artistic version */
+        body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            font-weight: 300; /* Light weight */
+            background: hsl(0, 0%, 15%); /* darker gray background */
+            color: white !important; /* All text white */
+        }
+        
+        /* Make all text elements white */
+        * {
+            color: white !important;
+        }
+        
+        /* Specific overrides for better contrast */
+        h1, h2, h3, h4, h5, h6, p, span, div, a, li, button {
+            color: white !important;
+            font-weight: 300 !important;
+        }
+        
+        /* Headings can be slightly bolder */
+        h1, h2, h3 {
+            font-weight: 400 !important;
+        }
+        
+        /* Ensure video is visible and properly sized */
+        #heroVideo {
+            width: 100% !important;
+            height: 100% !important;
+            object-fit: cover !important;
+            position: absolute !important;
+            top: 0 !important;
+            left: 0 !important;
+            z-index: -1 !important;
+        }
+        
+        .section-padding {
+            padding: 5rem 1rem;
+        }
+        
+        @media (min-width: 768px) {
+            .section-padding {
+                padding: 7rem 2rem;
+            }
+        }
+        
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        /* Animation classes */
+        .fade-in {
+            animation: fadeIn 0.8s ease-out forwards;
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .stagger-1 { animation-delay: 0.1s; }
+        .stagger-2 { animation-delay: 0.2s; }
+        .stagger-3 { animation-delay: 0.3s; }
+        
+        /* Hover effects */
+        .hover-lift {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .hover-lift:hover {
+            transform: translateY(-8px);
+        }
+    </style>
+</head>
+<body class="bg-artistic-texture">
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 transition-all duration-300 nav-artistic" id="navbar">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center h-20">
+                <div class="text-2xl font-bold" style="color: white !important;">
+                    BAUKUNST STÜCKE
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#leistungen" class="hover:opacity-70 transition font-medium" style="color: black !important;">Leistungen</a>
+                    <a href="#referenzen" class="hover:opacity-70 transition font-medium" style="color: black !important;">Referenzen</a>
+                    <a href="#über-uns" class="hover:opacity-70 transition font-medium" style="color: black !important;">Über uns</a>
+                    <a href="#kontakt" class="btn-artistic-primary">Kontakt</a>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <button class="md:hidden" onclick="toggleMobileMenu()">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="hidden md:hidden nav-artistic border-t border-opacity-20">
+            <div class="container mx-auto px-4 py-4">
+                <a href="#leistungen" class="block py-2 hover:opacity-70 transition" style="color: black !important;">Leistungen</a>
+                <a href="#referenzen" class="block py-2 hover:opacity-70 transition" style="color: black !important;">Referenzen</a>
+                <a href="#über-uns" class="block py-2 hover:opacity-70 transition" style="color: black !important;">Über uns</a>
+                <a href="#kontakt" class="block py-2 font-bold" style="color: black !important;">Kontakt</a>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Hero Section -->
+    <section id="hero" class="relative h-screen flex items-center justify-center overflow-hidden">
+        <!-- Video Background -->
+        <video 
+            autoplay 
+            muted 
+            loop 
+            playsinline 
+            preload="auto" 
+            class="absolute inset-0 w-full h-full object-cover" 
+            id="heroVideo"
+            onloadeddata="this.play()"
+            oncanplay="this.play()"
+        >
+            <source src="baukunst-show-richtfest.mov" type="video/mp4">
+            <source src="baukunst-show-richtfest.mov" type="video/quicktime">
+            <!-- Fallback to image if video doesn't load -->
+            <img src="hero-performance.png" alt="Baukunst Performance" class="w-full h-full object-cover">
+        </video>
+        
+        <!-- No overlay - transparent to show video clearly -->
+        
+        <!-- Content -->
+        <div class="relative z-10 text-center text-white px-4 max-w-5xl mx-auto">
+            <h1 class="headline-artistic text-5xl md:text-7xl mb-6 text-white fade-in">
+                BAUKUNST STÜCKE
+            </h1>
+            <p class="text-2xl md:text-3xl mb-8 font-light fade-in stagger-1 text-gray-100">
+                Wo Beton auf Emotion trifft
+            </p>
+            <p class="text-lg md:text-xl mb-12 max-w-3xl mx-auto opacity-90 fade-in stagger-2 text-gray-200">
+                Wir verwandeln Richtfeste und Baustellen-Events in unvergessliche Erlebnisse – 
+                mit spektakulären Inszenierungen, die Baukultur und Kunst vereinen.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center fade-in stagger-3">
+                <a href="#kontakt" class="btn-artistic-primary">Jetzt Show anfragen</a>
+                <a href="#leistungen" class="btn-artistic-secondary">Mehr erfahren</a>
+            </div>
+        </div>
+        
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white opacity-70">
+            <i data-lucide="chevron-down" class="w-8 h-8 animate-bounce"></i>
+        </div>
+    </section>
+    
+    <!-- Warum wir Section -->
+    <section id="warum-wir" class="section-padding" style="background: linear-gradient(180deg, hsl(0, 0%, 25%) 0%, #8a8a8a 60%, #8a8a8a 100%);">
+        <div class="container mx-auto px-4 max-w-6xl">
+            <div class="text-center mb-16">
+                <h2 class="headline-artistic text-4xl md:text-5xl mb-6">Beton trifft Emotion</h2>
+                <p class="text-xl max-w-3xl mx-auto" style="color: white !important;">
+                    Jede Baustelle ist eine Bühne. Wir übersetzen Baukultur in künstlerische Performance.
+                    Unser Versprechen: Ein emotionales Highlight, das Mitarbeiter, Bauherren und Gäste verbindet.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div class="text-center hover-lift" style="background: #3a3a3a; padding: 2rem; border-radius: 0.75rem; transition: all 0.4s ease;">
+                    <div class="mb-6 flex justify-center">
+                        <i data-lucide="drama" class="w-16 h-16" style="color: white !important;"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4" style="color: white !important;">Künstlerische Inszenierung</h3>
+                    <p style="color: white !important;">Dramaturgisch, präzise, wirkungsvoll – jede Performance ist ein Gesamtkunstwerk</p>
+                </div>
+                
+                <!-- Feature 2 -->
+                <div class="text-center hover-lift" style="background: #3a3a3a; padding: 2rem; border-radius: 0.75rem; transition: all 0.4s ease;">
+                    <div class="mb-6 flex justify-center">
+                        <i data-lucide="building-2" class="w-16 h-16" style="color: white !important;"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4" style="color: white !important;">Architektur im Mittelpunkt</h3>
+                    <p style="color: white !important;">Die Baustelle als Kulisse – wir inszenieren Ihren Bau als lebendige Bühne</p>
+                </div>
+                
+                <!-- Feature 3 -->
+                <div class="text-center hover-lift" style="background: #3a3a3a; padding: 2rem; border-radius: 0.75rem; transition: all 0.4s ease;">
+                    <div class="mb-6 flex justify-center">
+                        <i data-lucide="camera" class="w-16 h-16" style="color: white !important;"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4" style="color: white !important;">Bildstarke Momente</h3>
+                    <p style="color: white !important;">Ideal für PR, Social Media & Presse – wir schaffen unvergessliche Bilder</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Leistungen Section -->
+    <section id="leistungen" class="section-padding" style="background: linear-gradient(180deg, #8a8a8a 0%, #8a8a8a 70%, #8a8a8a 100%);">
+        <div class="container mx-auto px-4 max-w-6xl">
+            <div class="text-center mb-16">
+                <h2 class="headline-artistic text-4xl md:text-5xl mb-6" style="color: #4a3728;">Unsere Baukunst-Stücke</h2>
+                <p class="text-xl" style="color: white !important;">im Überblick</p>
+            </div>
+            
+            <div class="space-y-8">
+                <!-- Service 1 -->
+                <div class="hover-lift" style="background: #3a3a3a; padding: 2rem; border-radius: 0.75rem; transition: all 0.4s ease;">
+                    <h3 class="text-3xl font-bold mb-4" style="color: white !important;">1) Richtfest-Performance</h3>
+                    <p class="text-lg mb-4" style="color: white !important;">
+                        Dramaturgisch gestaltete Show direkt auf der Baustelle
+                    </p>
+                    <ul class="space-y-2" style="color: white !important;">
+                        <li>• Einbindung der Projekt-Story (Architektur, Team, Meilensteine)</li>
+                        <li>• <strong>Wirkung:</strong> Gänsehaut-Moment + starke Bilder</li>
+                    </ul>
+                </div>
+                
+                <!-- Service 2 -->
+                <div class="hover-lift" style="background: #3a3a3a; padding: 2rem; border-radius: 0.75rem; transition: all 0.4s ease;">
+                    <h3 class="text-3xl font-bold mb-4" style="color: white !important;">2) Stakeholder-Event</h3>
+                    <p class="text-lg mb-4" style="color: white !important;">
+                        Hochwertige Inszenierung für Investoren, Partner, Politik
+                    </p>
+                    <ul class="space-y-2" style="color: white !important;">
+                        <li>• Moderation, performative Akzente, Live-Choreos</li>
+                        <li>• <strong>Wirkung:</strong> Reputation & Vertrauen – perfekte Pressebilder</li>
+                    </ul>
+                </div>
+                
+                <!-- Service 3 -->
+                <div class="hover-lift" style="background: #3a3a3a; padding: 2rem; border-radius: 0.75rem; transition: all 0.4s ease;">
+                    <h3 class="text-3xl font-bold mb-4" style="color: white !important;">3) Individuelles Baukunststück</h3>
+                    <p class="text-lg mb-4" style="color: white !important;">
+                        Maßgeschneiderte Komposition (Musik/Bewegung/Objekte)
+                    </p>
+                    <ul class="space-y-2" style="color: white !important;">
+                        <li>• Einmalige Performance für besondere Übergaben & Feiern</li>
+                        <li>• <strong>Wirkung:</strong> Signature Moment für Ihr Projekt</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="#kontakt" class="btn-artistic-primary text-lg">Unverbindliches Angebot einholen</a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Referenzen Section -->
+    <section id="referenzen" class="section-padding" style="background: #8a8a8a;">
+        <div class="container mx-auto px-4 max-w-6xl">
+            <div class="text-center mb-16">
+                <h2 class="headline-artistic text-4xl md:text-5xl mb-6">Referenzen</h2>
+            </div>
+            
+            <!-- Logo Grid -->
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 mb-16">
+                <div class="card-artistic flex items-center justify-center h-20 hover-lift">
+                    <span class="text-2xl font-bold" style="color: black !important;">ZDF</span>
+                </div>
+                <div class="card-artistic flex items-center justify-center h-20 hover-lift">
+                    <span class="text-2xl font-bold" style="color: black !important;">Mercedes</span>
+                </div>
+                <div class="card-artistic flex items-center justify-center h-20 hover-lift">
+                    <span class="text-2xl font-bold" style="color: black !important;">Nike</span>
+                </div>
+                <div class="card-artistic flex items-center justify-center h-20 hover-lift">
+                    <span class="text-2xl font-bold" style="color: black !important;">MTV</span>
+                </div>
+                <div class="card-artistic flex items-center justify-center h-20 hover-lift">
+                    <span class="text-2xl font-bold" style="color: black !important;">Strabag</span>
+                </div>
+                <div class="card-artistic flex items-center justify-center h-20 hover-lift">
+                    <span class="text-lg" style="color: black !important;">+ weitere</span>
+                </div>
+            </div>
+            
+            <!-- Case Study -->
+            <div class="max-w-4xl mx-auto hover-lift" style="background: #3a3a3a; padding: 2rem; border-radius: 0.75rem; transition: all 0.4s ease;">
+                <h3 class="text-2xl font-bold mb-4" style="color: white !important;">Mini-Case: Strabag</h3>
+                <p class="text-lg italic mb-6" style="color: white !important;">
+                    „Für Strabag inszenierten wir das Richtfest eines Bürokomplexes: 
+                    250 Gäste, Standing Ovations, Pressestimmen in drei großen Medien. 
+                    Fokus: Architektur-Story + Teamleistung."
+                </p>
+                <div class="flex flex-wrap items-center gap-4 text-sm">
+                    <span class="flex items-center gap-2" style="color: white !important;">
+                        <i data-lucide="camera" class="w-4 h-4" style="color: white !important;"></i>
+                        Foto-Highlights für PR & Social Media
+                    </span>
+                    <span class="flex items-center gap-2" style="color: white !important;">
+                        <i data-lucide="video" class="w-4 h-4" style="color: white !important;"></i>
+                        30s Recap-Clip verfügbar
+                    </span>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Galerie Section -->
+    <section id="galerie" class="section-padding" style="background: #8a8a8a;">
+        <div class="container mx-auto px-4 max-w-6xl">
+            <div class="text-center mb-16">
+                <h2 class="headline-artistic text-4xl md:text-5xl mb-6">Galerie</h2>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Gallery Images -->
+                <div class="relative overflow-hidden rounded-xl aspect-square hover-lift">
+                    <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&h=800&fit=crop" 
+                         alt="Performance auf Baustelle" 
+                         class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                </div>
+                <div class="relative overflow-hidden rounded-xl aspect-square hover-lift">
+                    <img src="https://images.unsplash.com/photo-1516051662687-567d7c4e8f6a?w=800&h=800&fit=crop" 
+                         alt="Künstlerische Inszenierung" 
+                         class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                </div>
+                <div class="relative overflow-hidden rounded-xl aspect-square hover-lift">
+                    <img src="https://images.unsplash.com/photo-1503387837-b154d5074bd2?w=800&h=800&fit=crop" 
+                         alt="Architektur Performance" 
+                         class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                </div>
+                <div class="relative overflow-hidden rounded-xl aspect-square hover-lift">
+                    <img src="https://images.unsplash.com/photo-1590736969955-71cc94901144?w=800&h=800&fit=crop" 
+                         alt="Event Inszenierung" 
+                         class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                </div>
+                <div class="relative overflow-hidden rounded-xl aspect-square hover-lift">
+                    <img src="https://images.unsplash.com/photo-1431540015161-0bf868a2d407?w=800&h=800&fit=crop" 
+                         alt="Team Performance" 
+                         class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                </div>
+                <div class="relative overflow-hidden rounded-xl aspect-square hover-lift">
+                    <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&h=800&fit=crop" 
+                         alt="Stakeholder Event" 
+                         class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Über uns Section -->
+    <section id="über-uns" class="section-padding" style="background: #8a8a8a;">
+        <div class="container mx-auto px-4 max-w-6xl">
+            <div class="text-center mb-16">
+                <h2 class="headline-artistic text-4xl md:text-5xl mb-6">Über uns</h2>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-12 mb-12">
+                <!-- Felix -->
+                <div class="text-center">
+                    <div class="w-48 h-48 mx-auto mb-6 rounded-full overflow-hidden border-4 border-rose-quartz">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop" 
+                             alt="Felix Audu" 
+                             class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="text-2xl font-bold mb-2 text-gray-800">Felix Audu</h3>
+                    <p class="text-gray-600">Bühnen- und Performancekünstler</p>
+                </div>
+                
+                <!-- Eric -->
+                <div class="text-center">
+                    <div class="w-48 h-48 mx-auto mb-6 rounded-full overflow-hidden border-4 border-rose-quartz">
+                        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=400&fit=crop" 
+                             alt="Eric Jäger" 
+                             class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="text-2xl font-bold mb-2 text-gray-800">Eric Jäger</h3>
+                    <p class="text-gray-600">Bühnen- und Performancekünstler</p>
+                </div>
+            </div>
+            
+            <div class="max-w-3xl mx-auto text-center">
+                <p class="text-xl text-gray-700 mb-8">
+                    Seit 2022 verbinden wir Baukultur mit Bewegungskunst und inszenieren 
+                    Baustellen als lebendige Bühne.
+                </p>
+                <div class="grid md:grid-cols-3 gap-4 text-gray-600 mb-8">
+                    <p class="flex items-center justify-center gap-2">
+                        <i data-lucide="star" class="w-5 h-5 text-rose-quartz"></i>
+                        Urbane Performance & Show-Regie
+                    </p>
+                    <p class="flex items-center justify-center gap-2">
+                        <i data-lucide="shield-check" class="w-5 h-5 text-rose-quartz"></i>
+                        Sicherheit auf aktiven Baustellen
+                    </p>
+                    <p class="flex items-center justify-center gap-2">
+                        <i data-lucide="users" class="w-5 h-5 text-rose-quartz"></i>
+                        Künstler:innen-Netzwerk
+                    </p>
+                </div>
+                <p class="text-2xl font-bold text-gradient-artistic">
+                    Leitmotiv: Wo Beton auf Emotion trifft.
+                </p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Ablauf Section -->
+    <section id="ablauf" class="section-padding" style="background: #8a8a8a;">
+        <div class="container mx-auto px-4 max-w-6xl">
+            <div class="text-center mb-16">
+                <h2 class="headline-artistic text-4xl md:text-5xl mb-6">Ablauf</h2>
+            </div>
+            
+            <div class="relative">
+                <!-- Timeline Line -->
+                <div class="hidden md:block absolute top-12 left-0 right-0 h-1 gradient-primary opacity-50 rounded-full"></div>
+                
+                <!-- Timeline Steps -->
+                <div class="grid grid-cols-1 md:grid-cols-5 gap-8">
+                    <!-- Step 1 -->
+                    <div class="relative text-center">
+                        <div class="timeline-dot-artistic w-8 h-8 rounded-full mx-auto mb-4 flex items-center justify-center text-white font-bold text-sm relative z-10">
+                            1
+                        </div>
+                        <h4 class="font-bold mb-2 text-gray-800">Kennenlernen</h4>
+                        <p class="text-sm text-gray-600">30 Min. – Ziele, Ort, Zeitrahmen</p>
+                    </div>
+                    
+                    <!-- Step 2 -->
+                    <div class="relative text-center">
+                        <div class="timeline-dot-artistic w-8 h-8 rounded-full mx-auto mb-4 flex items-center justify-center text-white font-bold text-sm relative z-10">
+                            2
+                        </div>
+                        <h4 class="font-bold mb-2 text-gray-800">Konzeptvorschlag</h4>
+                        <p class="text-sm text-gray-600">Dramaturgie, Ablauf, Teamgröße</p>
+                    </div>
+                    
+                    <!-- Step 3 -->
+                    <div class="relative text-center">
+                        <div class="timeline-dot-artistic w-8 h-8 rounded-full mx-auto mb-4 flex items-center justify-center text-white font-bold text-sm relative z-10">
+                            3
+                        </div>
+                        <h4 class="font-bold mb-2 text-gray-800">Site-Check</h4>
+                        <p class="text-sm text-gray-600">Begehung, Sicherheit, Technik</p>
+                    </div>
+                    
+                    <!-- Step 4 -->
+                    <div class="relative text-center">
+                        <div class="timeline-dot-artistic w-8 h-8 rounded-full mx-auto mb-4 flex items-center justify-center text-white font-bold text-sm relative z-10">
+                            4
+                        </div>
+                        <h4 class="font-bold mb-2 text-gray-800">Inszenierung</h4>
+                        <p class="text-sm text-gray-600">Probe & Performance</p>
+                    </div>
+                    
+                    <!-- Step 5 -->
+                    <div class="relative text-center">
+                        <div class="timeline-dot-artistic w-8 h-8 rounded-full mx-auto mb-4 flex items-center justify-center text-white font-bold text-sm relative z-10">
+                            5
+                        </div>
+                        <h4 class="font-bold mb-2 text-gray-800">Dokumentation</h4>
+                        <p class="text-sm text-gray-600">Foto/Video optional</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- FAQ Section -->
+    <section id="faq" class="section-padding" style="background: #8a8a8a;">
+        <div class="container mx-auto px-4 max-w-3xl">
+            <div class="text-center mb-16">
+                <h2 class="headline-artistic text-4xl md:text-5xl mb-6">FAQ</h2>
+            </div>
+            
+            <div class="space-y-4">
+                <!-- FAQ 1 -->
+                <div class="faq-artistic p-6">
+                    <button class="w-full text-left flex justify-between items-center" onclick="toggleFAQ(1)">
+                        <h3 class="text-xl font-bold text-gray-800">Wie lange dauert die Performance?</h3>
+                        <i data-lucide="chevron-down" class="w-5 h-5 transition-transform text-rose-quartz" id="faq-icon-1"></i>
+                    </button>
+                    <div class="hidden mt-4 text-gray-700" id="faq-content-1">
+                        <p>Typisch 8–15 Min., je nach Format & Bühne.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ 2 -->
+                <div class="faq-artistic p-6">
+                    <button class="w-full text-left flex justify-between items-center" onclick="toggleFAQ(2)">
+                        <h3 class="text-xl font-bold text-gray-800">Was braucht ihr vor Ort?</h3>
+                        <i data-lucide="chevron-down" class="w-5 h-5 transition-transform text-rose-quartz" id="faq-icon-2"></i>
+                    </button>
+                    <div class="hidden mt-4 text-gray-700" id="faq-content-2">
+                        <p>Freifläche/"Bühne", Strom (falls Ton/Light), Abstimmung mit Bauleitung/Sicherheit.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ 3 -->
+                <div class="faq-artistic p-6">
+                    <button class="w-full text-left flex justify-between items-center" onclick="toggleFAQ(3)">
+                        <h3 class="text-xl font-bold text-gray-800">Wie früh müssen wir anfragen?</h3>
+                        <i data-lucide="chevron-down" class="w-5 h-5 transition-transform text-rose-quartz" id="faq-icon-3"></i>
+                    </button>
+                    <div class="hidden mt-4 text-gray-700" id="faq-content-3">
+                        <p>Ideal: 4–6 Wochen vorher. Express nach Absprache möglich.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Kontakt Section -->
+    <section id="kontakt" class="section-padding" style="background: #8a8a8a;">
+        <div class="container mx-auto px-4 max-w-3xl">
+            <div class="text-center mb-16">
+                <h2 class="headline-artistic text-4xl md:text-5xl mb-6">Kontakt</h2>
+                <p class="text-xl text-gray-700">
+                    Planen Sie ein Richtfest oder Baustellen-Event?<br>
+                    Lassen Sie uns gemeinsam die Bühne bauen.
+                </p>
+            </div>
+            
+            <div class="card-artistic">
+                <form class="space-y-6">
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-medium mb-2 text-gray-700">Name</label>
+                            <input type="text" class="input-artistic w-full">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium mb-2 text-gray-700">E-Mail</label>
+                            <input type="email" class="input-artistic w-full">
+                        </div>
+                    </div>
+                    
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-medium mb-2 text-gray-700">Telefon</label>
+                            <input type="tel" class="input-artistic w-full">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium mb-2 text-gray-700">Projekt/Ort/Datum</label>
+                            <input type="text" class="input-artistic w-full">
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium mb-2 text-gray-700">Nachricht</label>
+                        <textarea rows="4" class="input-artistic w-full"></textarea>
+                    </div>
+                    
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <button type="submit" class="btn-artistic-primary">Show anfragen</button>
+                        <button type="button" class="btn-artistic-secondary">Beratungsgespräch buchen</button>
+                    </div>
+                </form>
+                
+                <div class="mt-12 text-center text-gray-600 space-y-2">
+                    <p class="flex items-center justify-center gap-2">
+                        <i data-lucide="mail" class="w-4 h-4"></i>
+                        kontakt@baukunst-stuecke.de
+                    </p>
+                    <p class="flex items-center justify-center gap-2">
+                        <i data-lucide="phone" class="w-4 h-4"></i>
+                        +49 30 XXXX XXXX
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="py-8 border-t border-opacity-30" style="background: hsl(0, 0%, 15%); border-color: hsl(0, 0%, 30%)">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center" style="color: white !important;">
+                <div class="text-sm mb-4 md:mb-0">
+                    <a href="#" class="hover:opacity-70 transition" style="color: white !important;">Impressum</a> · 
+                    <a href="#" class="hover:opacity-70 transition" style="color: white !important;">Datenschutz</a> · 
+                    <a href="#" class="hover:opacity-70 transition" style="color: white !important;">AGB</a>
+                </div>
+                <div class="text-sm" style="color: white !important;">
+                    © 2025 Felix Audu & Eric Jäger
+                </div>
+                <div class="text-sm mt-4 md:mt-0">
+                    <a href="https://instagram.com/baukunst.stuecke" class="flex items-center gap-2 hover:opacity-70 transition" style="color: white !important;">
+                        <i data-lucide="instagram" class="w-4 h-4"></i>
+                        @baukunst.stuecke
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+        
+        // Force video to play immediately when page loads
+        function playVideo() {
+            const video = document.getElementById('heroVideo');
+            if (video) {
+                console.log('Attempting to play video...');
+                
+                // Reset video to start
+                video.currentTime = 0;
+                
+                // Multiple play attempts with different triggers
+                const attemptPlay = async (attempt) => {
+                    try {
+                        console.log(`Play attempt ${attempt}`);
+                        await video.play();
+                        console.log('✅ Video is now playing!');
+                        return true;
+                    } catch (error) {
+                        console.log(`❌ Play attempt ${attempt} failed:`, error.message);
+                        return false;
+                    }
+                };
+                
+                // Immediate attempt
+                attemptPlay(1);
+                
+                // Retry attempts
+                setTimeout(() => attemptPlay(2), 100);
+                setTimeout(() => attemptPlay(3), 500);
+                setTimeout(() => attemptPlay(4), 1000);
+                
+                // Listen for user interaction as fallback
+                const playOnInteraction = () => {
+                    video.play().then(() => {
+                        console.log('✅ Video playing after user interaction');
+                        document.removeEventListener('click', playOnInteraction);
+                        document.removeEventListener('touchstart', playOnInteraction);
+                        document.removeEventListener('keydown', playOnInteraction);
+                    });
+                };
+                
+                document.addEventListener('click', playOnInteraction, { once: true });
+                document.addEventListener('touchstart', playOnInteraction, { once: true });
+                document.addEventListener('keydown', playOnInteraction, { once: true });
+                
+                // Video event listeners for debugging
+                video.addEventListener('loadstart', () => console.log('🎬 Video loading started'));
+                video.addEventListener('loadedmetadata', () => console.log('📊 Video metadata loaded'));
+                video.addEventListener('loadeddata', () => console.log('📦 Video data loaded'));
+                video.addEventListener('canplay', () => console.log('▶️ Video can start playing'));
+                video.addEventListener('canplaythrough', () => console.log('🚀 Video can play through'));
+                video.addEventListener('play', () => console.log('▶️ Video play event fired'));
+                video.addEventListener('playing', () => console.log('🎥 Video is actually playing'));
+                video.addEventListener('pause', () => console.log('⏸️ Video paused'));
+                video.addEventListener('error', (e) => console.log('❌ Video error:', e));
+            }
+        }
+        
+        // Try to play as early as possible
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', playVideo);
+        } else {
+            playVideo();
+        }
+        
+        // Also try when window fully loads
+        window.addEventListener('load', playVideo);
+        
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('hidden');
+        }
+        
+        // FAQ toggle
+        function toggleFAQ(id) {
+            const content = document.getElementById(`faq-content-${id}`);
+            const icon = document.getElementById(`faq-icon-${id}`);
+            content.classList.toggle('hidden');
+            icon.classList.toggle('rotate-180');
+        }
+        
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.style.background = 'hsla(284, 11%, 80%, 0.95)';
+                navbar.style.backdropFilter = 'blur(20px)';
+            } else {
+                navbar.style.background = 'hsla(284, 11%, 80%, 0.9)';
+                navbar.style.backdropFilter = 'blur(20px)';
+            }
+        });
+        
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+        
+        // Scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                }
+            });
+        }, observerOptions);
+        
+        // Observe all sections
+        document.querySelectorAll('section').forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>

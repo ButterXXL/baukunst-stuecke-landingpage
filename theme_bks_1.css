@@ -1,0 +1,158 @@
+:root {
+  /* Baukunst Industrial Theme */
+  --background: oklch(0.1800 0 0);  /* Dark concrete gray */
+  --foreground: oklch(0.9851 0 0);  /* Off-white */
+  --card: oklch(0.2200 0 0);  /* Slightly lighter gray */
+  --card-foreground: oklch(0.9851 0 0);
+  --popover: oklch(0.2200 0 0);
+  --popover-foreground: oklch(0.9851 0 0);
+  
+  /* Orange primary - construction/energy */
+  --primary: oklch(0.6800 0.2200 40.0000);  /* #EA6A0A */
+  --primary-foreground: oklch(1.0000 0 0);
+  
+  /* Industrial steel gray */
+  --secondary: oklch(0.3500 0 0);
+  --secondary-foreground: oklch(0.9851 0 0);
+  
+  --muted: oklch(0.3000 0 0);
+  --muted-foreground: oklch(0.6500 0 0);
+  
+  --accent: oklch(0.3500 0 0);
+  --accent-foreground: oklch(0.9851 0 0);
+  
+  --destructive: oklch(0.5770 0.2450 27.3250);
+  --destructive-foreground: oklch(1.0000 0 0);
+  
+  --border: oklch(0.3000 0 0);
+  --input: oklch(0.3000 0 0);
+  --ring: oklch(0.6800 0.2200 40.0000);
+  
+  /* Chart colors - construction palette */
+  --chart-1: oklch(0.6800 0.2200 40.0000);  /* Orange */
+  --chart-2: oklch(0.5000 0.0500 230.0000); /* Steel blue */
+  --chart-3: oklch(0.4500 0 0);             /* Medium gray */
+  --chart-4: oklch(0.7000 0.1000 60.0000);  /* Yellow accent */
+  --chart-5: oklch(0.3000 0 0);             /* Dark gray */
+  
+  /* Typography - Modern industrial */
+  --font-sans: 'Geist', 'Inter', system-ui, -apple-system, sans-serif;
+  --font-serif: 'Geist', 'Inter', serif;
+  --font-mono: 'Geist Mono', 'JetBrains Mono', monospace;
+  
+  /* Spacing & Layout */
+  --radius: 0.125rem;  /* Sharp, industrial corners */
+  --shadow-2xs: 0px 2px 4px 0px hsl(0 0% 0% / 0.20);
+  --shadow-xs: 0px 2px 4px 0px hsl(0 0% 0% / 0.20);
+  --shadow-sm: 0px 4px 8px 0px hsl(0 0% 0% / 0.25), 0px 1px 2px -1px hsl(0 0% 0% / 0.25);
+  --shadow: 0px 4px 8px 0px hsl(0 0% 0% / 0.25), 0px 1px 2px -1px hsl(0 0% 0% / 0.25);
+  --shadow-md: 0px 8px 16px 0px hsl(0 0% 0% / 0.30), 0px 2px 4px -1px hsl(0 0% 0% / 0.30);
+  --shadow-lg: 0px 16px 32px 0px hsl(0 0% 0% / 0.35), 0px 4px 8px -1px hsl(0 0% 0% / 0.35);
+  --shadow-xl: 0px 24px 48px 0px hsl(0 0% 0% / 0.40), 0px 8px 16px -1px hsl(0 0% 0% / 0.40);
+  --shadow-2xl: 0px 32px 64px 0px hsl(0 0% 0% / 0.45);
+  
+  --tracking-normal: 0.02em;
+  --spacing: 0.25rem;
+  
+  /* Radius variants */
+  --radius-sm: calc(var(--radius) - 2px);
+  --radius-md: calc(var(--radius) - 1px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 2px);
+}
+
+/* Custom utility classes for Baukunst theme */
+.text-gradient-orange {
+  background: linear-gradient(135deg, oklch(0.6800 0.2200 40.0000) 0%, oklch(0.7500 0.2000 50.0000) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.bg-concrete-texture {
+  background-image: 
+    repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 35px,
+      rgba(255, 255, 255, 0.01) 35px,
+      rgba(255, 255, 255, 0.01) 70px
+    ),
+    linear-gradient(
+      180deg,
+      oklch(0.1800 0 0) 0%,
+      oklch(0.2000 0 0) 100%
+    );
+}
+
+.border-industrial {
+  border: 2px solid oklch(0.3000 0 0);
+  border-style: solid;
+  position: relative;
+}
+
+.border-industrial::before {
+  content: '';
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  right: -4px;
+  bottom: -4px;
+  border: 1px solid oklch(0.2500 0 0);
+  pointer-events: none;
+}
+
+/* Industrial button styles */
+.btn-industrial {
+  background: linear-gradient(135deg, oklch(0.6800 0.2200 40.0000) 0%, oklch(0.6500 0.2100 38.0000) 100%);
+  color: white;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.9rem 1.2rem;
+  border-radius: var(--radius);
+  border: none;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-industrial:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(234, 106, 10, 0.3);
+}
+
+.btn-industrial-outline {
+  background: transparent;
+  color: oklch(0.6800 0.2200 40.0000);
+  border: 2px solid oklch(0.6800 0.2200 40.0000);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.9rem 1.2rem;
+  border-radius: var(--radius);
+  position: relative;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-industrial-outline:hover {
+  background: oklch(0.6800 0.2200 40.0000);
+  color: white;
+  transform: translateY(-2px);
+}
+
+/* Glass morphism for overlays */
+.glass-overlay {
+  background: rgba(28, 28, 28, 0.8);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Typography enhancements */
+.headline-industrial {
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  text-transform: uppercase;
+}

@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Baukunst Stücke – Spektakuläre Inszenierungen für Richtfeste & Baustellen-Events</title>
+    <meta name="description" content="Wir verwandeln Baustellen in Bühnen: künstlerische Performances für Richtfeste, Stakeholder-Events & besondere Übergaben – emotional, bildstark, pressefähig.">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Flowbite -->
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@2.0.0/dist/flowbite.min.js"></script>
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&family=Geist+Mono:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Custom Theme -->
+    <link rel="stylesheet" href="theme_bks_1.css">
+    
+    <style>
+        /* Custom styles */
+        :root {
+            --orange-primary: #EA6A0A;
+            --dark-bg: #1a1a1a;
+            --concrete-gray: #2d2d2d;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--dark-bg);
+            color: #f5f5f5;
+        }
+        
+        .headline-industrial {
+            font-weight: 900;
+            letter-spacing: -0.02em;
+            line-height: 1.1;
+            text-transform: uppercase;
+        }
+        
+        .btn-primary-bks {
+            background: var(--orange-primary);
+            color: white;
+            padding: 0.9rem 1.2rem;
+            border-radius: 0.6rem;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            display: inline-block;
+            text-decoration: none;
+        }
+        
+        .btn-primary-bks:hover {
+            background: #ff7a1a;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 16px rgba(234, 106, 10, 0.3);
+        }
+        
+        .btn-secondary-bks {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            padding: 0.9rem 1.2rem;
+            border-radius: 0.6rem;
+            font-weight: 700;
+            backdrop-filter: blur(6px);
+            transition: all 0.3s ease;
+            display: inline-block;
+            text-decoration: none;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .btn-secondary-bks:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
+        
+        .glass-card {
+            background: rgba(45, 45, 45, 0.8);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            padding: 2rem;
+        }
+        
+        .video-overlay {
+            background: linear-gradient(to bottom, 
+                rgba(26, 26, 26, 0.3) 0%, 
+                rgba(26, 26, 26, 0.6) 50%, 
+                rgba(26, 26, 26, 0.9) 100%);
+        }
+        
+        .section-padding {
+            padding: 5rem 1rem;
+        }
+        
+        @media (min-width: 768px) {
+            .section-padding {
+                padding: 7rem 2rem;
+            }
+        }
+        
+        /* Concrete texture background */
+        .concrete-bg {
+            background-image: 
+                repeating-linear-gradient(
+                    45deg,
+                    transparent,
+                    transparent 35px,
+                    rgba(255, 255, 255, 0.01) 35px,
+                    rgba(255, 255, 255, 0.01) 70px
+                );
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 transition-all duration-300" id="navbar">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center h-20">
+                <div class="text-2xl font-bold">
+                    <span class="text-orange-500">BAUKUNST</span> STÜCKE
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#leistungen" class="hover:text-orange-500 transition">Leistungen</a>
+                    <a href="#referenzen" class="hover:text-orange-500 transition">Referenzen</a>
+                    <a href="#über-uns" class="hover:text-orange-500 transition">Über uns</a>
+                    <a href="#kontakt" class="btn-primary-bks">Show anfragen</a>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <button class="md:hidden" onclick="toggleMobileMenu()">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="hidden md:hidden bg-gray-900 border-t border-gray-800">
+            <div class="container mx-auto px-4 py-4">
+                <a href="#leistungen" class="block py-2 hover:text-orange-500">Leistungen</a>
+                <a href="#referenzen" class="block py-2 hover:text-orange-500">Referenzen</a>
+                <a href="#über-uns" class="block py-2 hover:text-orange-500">Über uns</a>
+                <a href="#kontakt" class="block py-2 text-orange-500 font-bold">Show anfragen</a>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Hero Section -->
+    <section id="hero" class="relative h-screen flex items-center justify-center overflow-hidden">
+        <!-- Video Background -->
+        <video autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover" poster="hero-performance.png">
+            <source src="baukunst-show-richtfest.mov" type="video/quicktime">
+            <source src="baukunst-show-richtfest.mov" type="video/mp4">
+            <!-- Fallback to image if video doesn't load -->
+            <img src="hero-performance.png" alt="Baukunst Performance" class="w-full h-full object-cover">
+        </video>
+        
+        <!-- Overlay -->
+        <div class="absolute inset-0 video-overlay"></div>
+        
+        <!-- Content -->
+        <div class="relative z-10 text-center text-white px-4 max-w-5xl mx-auto">
+            <h1 class="headline-industrial text-5xl md:text-7xl mb-6">
+                BAUKUNST STÜCKE
+            </h1>
+            <p class="text-2xl md:text-3xl mb-8 font-light">
+                Wo Beton auf Emotion trifft
+            </p>
+            <p class="text-lg md:text-xl mb-12 max-w-3xl mx-auto opacity-90">
+                Wir verwandeln Richtfeste und Baustellen-Events in unvergessliche Erlebnisse – 
+                mit spektakulären Inszenierungen, die Baukultur und Kunst vereinen.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#kontakt" class="btn-primary-bks">Jetzt Show anfragen</a>
+                <a href="#leistungen" class="btn-secondary-bks">Mehr erfahren</a>
+            </div>
+        </div>
+        
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2">
+            <i data-lucide="chevron-down" class="w-8 h-8 animate-bounce"></i>
+        </div>
+    </section>
+    
+    <!-- Warum wir Section -->
+    <section id="warum-wir" class="section-padding concrete-bg">
+        <div class="container mx-auto px-4 max-w-6xl">
+            <div class="text-center mb-16">
+                <h2 class="headline-industrial text-4xl md:text-5xl mb-6">Beton trifft Emotion</h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                    Jede Baustelle ist eine Bühne. Wir übersetzen Baukultur in künstlerische Performance.
+                    Unser Versprechen: Ein emotionales Highlight, das Mitarbeiter, Bauherren und Gäste verbindet.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div class="glass-card text-center hover:transform hover:scale-105 transition-all duration-300">
+                    <div class="text-5xl mb-6">🎭</div>
+                    <h3 class="text-2xl font-bold mb-4">Künstlerische Inszenierung</h3>
+                    <p class="text-gray-300">Dramaturgisch, präzise, wirkungsvoll – jede Performance ist ein Gesamtkunstwerk</p>
+                </div>
+                
+                <!-- Feature 2 -->
+                <div class="glass-card text-center hover:transform hover:scale-105 transition-all duration-300">
+                    <div class="text-5xl mb-6">🏗️</div>
+                    <h3 class="text-2xl font-bold mb-4">Architektur im Mittelpunkt</h3>
+                    <p class="text-gray-300">Die Baustelle als Kulisse – wir inszenieren Ihren Bau als lebendige Bühne</p>
+                </div>
+                
+                <!-- Feature 3 -->
+                <div class="glass-card text-center hover:transform hover:scale-105 transition-all duration-300">
+                    <div class="text-5xl mb-6">📸</div>
+                    <h3 class="text-2xl font-bold mb-4">Bildstarke Momente</h3>
+                    <p class="text-gray-300">Ideal für PR, Social Media & Presse – wir schaffen unvergessliche Bilder</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Leistungen Section -->
+    <section id="leistungen" class="section-padding bg-gray-900">
+        <div class="container mx-auto px-4 max-w-6xl">
+            <div class="text-center mb-16">
+                <h2 class="headline-industrial text-4xl md:text-5xl mb-6">Unsere Baukunst-Stücke</h2>
+                <p class="text-xl text-gray-300">im Überblick</p>
+            </div>
+            
+            <div class="space-y-8">
+                <!-- Service 1 -->
+                <div class="glass-card hover:border-orange-500 transition-all duration-300">
+                    <h3 class="text-3xl font-bold mb-4 text-orange-500">1) Richtfest-Performance</h3>
+                    <p class="text-lg text-gray-300 mb-4">
+                        Dramaturgisch gestaltete Show direkt auf der Baustelle
+                    </p>
+                    <ul class="space-y-2 text-gray-300">
+                        <li>• Einbindung der Projekt-Story (Architektur, Team, Meilensteine)</li>
+                        <li>• <strong>Wirkung:</strong> Gänsehaut-Moment + starke Bilder</li>
+                    </ul>
+                </div>
+                
+                <!-- Service 2 -->
+                <div class="glass-card hover:border-orange-500 transition-all duration-300">
+                    <h3 class="text-3xl font-bold mb-4 text-orange-500">2) Stakeholder-Event</h3>
+                    <p class="text-lg text-gray-300 mb-4">
+                        Hochwertige Inszenierung für Investoren, Partner, Politik
+                    </p>
+                    <ul class="space-y-2 text-gray-300">
+                        <li>• Moderation, performative Akzente, Live-Choreos</li>
+                        <li>• <strong>Wirkung:</strong> Reputation & Vertrauen – perfekte Pressebilder</li>
+                    </ul>
+                </div>
+                
+                <!-- Service 3 -->
+                <div class="glass-card hover:border-orange-500 transition-all duration-300">
+                    <h3 class="text-3xl font-bold mb-4 text-orange-500">3) Individuelles Baukunststück</h3>
+                    <p class="text-lg text-gray-300 mb-4">
+                        Maßgeschneiderte Komposition (Musik/Bewegung/Objekte)
+                    </p>
+                    <ul class="space-y-2 text-gray-300">
+                        <li>• Einmalige Performance für besondere Übergaben & Feiern</li>
+                        <li>• <strong>Wirkung:</strong> Signature Moment für Ihr Projekt</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="#kontakt" class="btn-primary-bks text-lg">Unverbindliches Angebot einholen</a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Referenzen Section -->
+    <section id="referenzen" class="section-padding concrete-bg">
+        <div class="container mx-auto px-4 max-w-6xl">
+            <div class="text-center mb-16">
+                <h2 class="headline-industrial text-4xl md:text-5xl mb-6">Referenzen</h2>
+            </div>
+            
+            <!-- Logo Grid -->
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 mb-16">
+                <div class="flex items-center justify-center h-20 glass-card">
+                    <span class="text-2xl font-bold opacity-70">ZDF</span>
+                </div>
+                <div class="flex items-center justify-center h-20 glass-card">
+                    <span class="text-2xl font-bold opacity-70">Mercedes</span>
+                </div>
+                <div class="flex items-center justify-center h-20 glass-card">
+                    <span class="text-2xl font-bold opacity-70">Nike</span>
+                </div>
+                <div class="flex items-center justify-center h-20 glass-card">
+                    <span class="text-2xl font-bold opacity-70">MTV</span>
+                </div>
+                <div class="flex items-center justify-center h-20 glass-card">
+                    <span class="text-2xl font-bold opacity-70">Strabag</span>
+                </div>
+                <div class="flex items-center justify-center h-20 glass-card">
+                    <span class="text-lg opacity-70">+ weitere</span>
+                </div>
+            </div>
+            
+            <!-- Case Study -->
+            <div class="glass-card max-w-4xl mx-auto">
+                <h3 class="text-2xl font-bold mb-4 text-orange-500">Mini-Case: Strabag</h3>
+                <p class="text-lg text-gray-300 italic">
+                    „Für Strabag inszenierten wir das Richtfest eines Bürokomplexes: 
+                    250 Gäste, Standing Ovations, Pressestimmen in drei großen Medien. 
+                    Fokus: Architektur-Story + Teamleistung."
+                </p>
+                <div class="mt-6 flex items-center gap-4">
+                    <span class="text-sm text-gray-400">📷 Foto-Highlights bereitgestellt für PR & Social Media</span>
+                    <span class="text-sm text-gray-400">🎞️ 30s Recap-Clip verfügbar</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Galerie Section -->
+    <section id="galerie" class="section-padding bg-gray-900">
+        <div class="container mx-auto px-4 max-w-6xl">
+            <div class="text-center mb-16">
+                <h2 class="headline-industrial text-4xl md:text-5xl mb-6">Galerie</h2>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Gallery Images -->
+                <div class="relative overflow-hidden rounded-lg aspect-square">
+                    <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&h=800&fit=crop" 
+                         alt="Performance auf Baustelle" 
+                         class="w-full h-full object-cover hover:scale-110 transition-transform duration-500">
+                </div>
+                <div class="relative overflow-hidden rounded-lg aspect-square">
+                    <img src="https://images.unsplash.com/photo-1516051662687-567d7c4e8f6a?w=800&h=800&fit=crop" 
+                         alt="Künstlerische Inszenierung" 
+                         class="w-full h-full object-cover hover:scale-110 transition-transform duration-500">
+                </div>
+                <div class="relative overflow-hidden rounded-lg aspect-square">
+                    <img src="https://images.unsplash.com/photo-1503387837-b154d5074bd2?w=800&h=800&fit=crop" 
+                         alt="Architektur Performance" 
+                         class="w-full h-full object-cover hover:scale-110 transition-transform duration-500">
+                </div>
+                <div class="relative overflow-hidden rounded-lg aspect-square">
+                    <img src="https://images.unsplash.com/photo-1590736969955-71cc94901144?w=800&h=800&fit=crop" 
+                         alt="Event Inszenierung" 
+                         class="w-full h-full object-cover hover:scale-110 transition-transform duration-500">
+                </div>
+                <div class="relative overflow-hidden rounded-lg aspect-square">
+                    <img src="https://images.unsplash.com/photo-1431540015161-0bf868a2d407?w=800&h=800&fit=crop" 
+                         alt="Team Performance" 
+                         class="w-full h-full object-cover hover:scale-110 transition-transform duration-500">
+                </div>
+                <div class="relative overflow-hidden rounded-lg aspect-square">
+                    <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&h=800&fit=crop" 
+                         alt="Stakeholder Event" 
+                         class="w-full h-full object-cover hover:scale-110 transition-transform duration-500">
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Über uns Section -->
+    <section id="über-uns" class="section-padding concrete-bg">
+        <div class="container mx-auto px-4 max-w-6xl">
+            <div class="text-center mb-16">
+                <h2 class="headline-industrial text-4xl md:text-5xl mb-6">Über uns</h2>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-12 mb-12">
+                <!-- Felix -->
+                <div class="text-center">
+                    <div class="w-48 h-48 mx-auto mb-6 rounded-full overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop" 
+                             alt="Felix Audu" 
+                             class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="text-2xl font-bold mb-2">Felix Audu</h3>
+                    <p class="text-gray-400">Bühnen- und Performancekünstler</p>
+                </div>
+                
+                <!-- Eric -->
+                <div class="text-center">
+                    <div class="w-48 h-48 mx-auto mb-6 rounded-full overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=400&fit=crop" 
+                             alt="Eric Jäger" 
+                             class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="text-2xl font-bold mb-2">Eric Jäger</h3>
+                    <p class="text-gray-400">Bühnen- und Performancekünstler</p>
+                </div>
+            </div>
+            
+            <div class="max-w-3xl mx-auto text-center">
+                <p class="text-xl text-gray-300 mb-8">
+                    Seit 2022 verbinden wir Baukultur mit Bewegungskunst und inszenieren 
+                    Baustellen als lebendige Bühne.
+                </p>
+                <div class="space-y-4 text-gray-300">
+                    <p>• Ursprung in urbaner Performance & Show-Regie</p>
+                    <p>• Sicherheit & Präzision auf aktiven Baustellen</p>
+                    <p>• Netzwerk aus Künstler:innen, Technik & Produktion</p>
+                </div>
+                <p class="text-2xl font-bold mt-8 text-orange-500">
+                    Leitmotiv: Wo Beton auf Emotion trifft.
+                </p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Ablauf Section -->
+    <section id="ablauf" class="section-padding bg-gray-900">
+        <div class="container mx-auto px-4 max-w-6xl">
+            <div class="text-center mb-16">
+                <h2 class="headline-industrial text-4xl md:text-5xl mb-6">Ablauf</h2>
+            </div>
+            
+            <div class="relative">
+                <!-- Timeline Line -->
+                <div class="hidden md:block absolute top-12 left-0 right-0 h-1 bg-gray-700"></div>
+                
+                <!-- Timeline Steps -->
+                <div class="grid grid-cols-1 md:grid-cols-5 gap-8">
+                    <!-- Step 1 -->
+                    <div class="relative text-center">
+                        <div class="w-8 h-8 bg-orange-500 rounded-full mx-auto mb-4 flex items-center justify-center text-white font-bold">
+                            1
+                        </div>
+                        <h4 class="font-bold mb-2">Kennenlernen</h4>
+                        <p class="text-sm text-gray-400">30 Min. – Ziele, Ort, Zeitrahmen</p>
+                    </div>
+                    
+                    <!-- Step 2 -->
+                    <div class="relative text-center">
+                        <div class="w-8 h-8 bg-orange-500 rounded-full mx-auto mb-4 flex items-center justify-center text-white font-bold">
+                            2
+                        </div>
+                        <h4 class="font-bold mb-2">Konzeptvorschlag</h4>
+                        <p class="text-sm text-gray-400">Dramaturgie, Ablauf, Teamgröße</p>
+                    </div>
+                    
+                    <!-- Step 3 -->
+                    <div class="relative text-center">
+                        <div class="w-8 h-8 bg-orange-500 rounded-full mx-auto mb-4 flex items-center justify-center text-white font-bold">
+                            3
+                        </div>
+                        <h4 class="font-bold mb-2">Site-Check</h4>
+                        <p class="text-sm text-gray-400">Begehung, Sicherheit, Technik</p>
+                    </div>
+                    
+                    <!-- Step 4 -->
+                    <div class="relative text-center">
+                        <div class="w-8 h-8 bg-orange-500 rounded-full mx-auto mb-4 flex items-center justify-center text-white font-bold">
+                            4
+                        </div>
+                        <h4 class="font-bold mb-2">Inszenierung</h4>
+                        <p class="text-sm text-gray-400">Probe & Performance</p>
+                    </div>
+                    
+                    <!-- Step 5 -->
+                    <div class="relative text-center">
+                        <div class="w-8 h-8 bg-orange-500 rounded-full mx-auto mb-4 flex items-center justify-center text-white font-bold">
+                            5
+                        </div>
+                        <h4 class="font-bold mb-2">Dokumentation</h4>
+                        <p class="text-sm text-gray-400">Foto/Video optional</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- FAQ Section -->
+    <section id="faq" class="section-padding concrete-bg">
+        <div class="container mx-auto px-4 max-w-3xl">
+            <div class="text-center mb-16">
+                <h2 class="headline-industrial text-4xl md:text-5xl mb-6">FAQ</h2>
+            </div>
+            
+            <div class="space-y-6">
+                <!-- FAQ 1 -->
+                <div class="glass-card">
+                    <button class="w-full text-left flex justify-between items-center" onclick="toggleFAQ(1)">
+                        <h3 class="text-xl font-bold">Wie lange dauert die Performance?</h3>
+                        <i data-lucide="chevron-down" class="w-5 h-5 transition-transform" id="faq-icon-1"></i>
+                    </button>
+                    <div class="hidden mt-4 text-gray-300" id="faq-content-1">
+                        <p>Typisch 8–15 Min., je nach Format & Bühne.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ 2 -->
+                <div class="glass-card">
+                    <button class="w-full text-left flex justify-between items-center" onclick="toggleFAQ(2)">
+                        <h3 class="text-xl font-bold">Was braucht ihr vor Ort?</h3>
+                        <i data-lucide="chevron-down" class="w-5 h-5 transition-transform" id="faq-icon-2"></i>
+                    </button>
+                    <div class="hidden mt-4 text-gray-300" id="faq-content-2">
+                        <p>Freifläche/"Bühne", Strom (falls Ton/Light), Abstimmung mit Bauleitung/Sicherheit.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ 3 -->
+                <div class="glass-card">
+                    <button class="w-full text-left flex justify-between items-center" onclick="toggleFAQ(3)">
+                        <h3 class="text-xl font-bold">Wie früh müssen wir anfragen?</h3>
+                        <i data-lucide="chevron-down" class="w-5 h-5 transition-transform" id="faq-icon-3"></i>
+                    </button>
+                    <div class="hidden mt-4 text-gray-300" id="faq-content-3">
+                        <p>Ideal: 4–6 Wochen vorher. Express nach Absprache möglich.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Kontakt Section -->
+    <section id="kontakt" class="section-padding bg-gray-900">
+        <div class="container mx-auto px-4 max-w-3xl">
+            <div class="text-center mb-16">
+                <h2 class="headline-industrial text-4xl md:text-5xl mb-6">Kontakt</h2>
+                <p class="text-xl text-gray-300">
+                    Planen Sie ein Richtfest oder Baustellen-Event?<br>
+                    Lassen Sie uns gemeinsam die Bühne bauen.
+                </p>
+            </div>
+            
+            <div class="glass-card">
+                <form class="space-y-6">
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-medium mb-2">Name</label>
+                            <input type="text" class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:border-orange-500 focus:outline-none transition">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium mb-2">E-Mail</label>
+                            <input type="email" class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:border-orange-500 focus:outline-none transition">
+                        </div>
+                    </div>
+                    
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-medium mb-2">Telefon</label>
+                            <input type="tel" class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:border-orange-500 focus:outline-none transition">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium mb-2">Projekt/Ort/Datum</label>
+                            <input type="text" class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:border-orange-500 focus:outline-none transition">
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium mb-2">Nachricht</label>
+                        <textarea rows="4" class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:border-orange-500 focus:outline-none transition"></textarea>
+                    </div>
+                    
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <button type="submit" class="btn-primary-bks">Show anfragen</button>
+                        <button type="button" class="btn-secondary-bks">Beratungsgespräch buchen</button>
+                    </div>
+                </form>
+                
+                <div class="mt-12 text-center text-gray-400">
+                    <p class="mb-2">E-Mail: kontakt@baukunst-stuecke.de</p>
+                    <p>Telefon: +49 30 XXXX XXXX</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="bg-black py-8 border-t border-gray-800">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="text-gray-400 text-sm mb-4 md:mb-0">
+                    <a href="#" class="hover:text-white transition">Impressum</a> · 
+                    <a href="#" class="hover:text-white transition">Datenschutz</a> · 
+                    <a href="#" class="hover:text-white transition">AGB</a>
+                </div>
+                <div class="text-gray-400 text-sm">
+                    © 2025 Felix Audu & Eric Jäger
+                </div>
+                <div class="text-gray-400 text-sm mt-4 md:mt-0">
+                    Instagram: <a href="https://instagram.com/baukunst.stuecke" class="text-orange-500 hover:text-orange-400 transition">@baukunst.stuecke</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+        
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('hidden');
+        }
+        
+        // FAQ toggle
+        function toggleFAQ(id) {
+            const content = document.getElementById(`faq-content-${id}`);
+            const icon = document.getElementById(`faq-icon-${id}`);
+            content.classList.toggle('hidden');
+            icon.classList.toggle('rotate-180');
+        }
+        
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('bg-gray-900', 'shadow-lg');
+            } else {
+                navbar.classList.remove('bg-gray-900', 'shadow-lg');
+            }
+        });
+        
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
